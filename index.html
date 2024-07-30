@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoRaspred</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js" defer></script>
+</head>
+<body class="bg-sky-100">
+
+    <div class="w-screen h-screen absolute z-0 overflow-hidden">
+        <div class="absolute top-[30%] right-[5%] animate-sol">
+            <img class="pointer-events-none" src="./img/svg/SOL.svg" alt="">
+        </div>
+        <div class="absolute top-[19%] left-[5%] animate-avax">
+            <img class="pointer-events-none" src="./img/svg/AVAX.svg" alt="">
+        </div>
+        <div class="absolute top-[43%] left-[12%] animate-bin">
+            <img class="pointer-events-none" src="./img/svg/BIN.svg" alt="">
+        </div>
+        <div class="absolute top-[80%] right-[7%] animate-btc">
+            <img class="pointer-events-none" src="./img/svg/BTC.svg" alt="">
+        </div>
+        <div class="absolute top-[65%] left-[16%] animate-dot">
+            <img class="pointer-events-none" src="./img/svg/DOT.svg" alt="">
+        </div>
+        <div class="absolute top-[1%] left-[7%] animate-eth">
+            <img class="pointer-events-none" src="./img/svg/ETH.svg" alt="">
+        </div>
+        <div class="absolute top-[55%] right-[17%] animate-shib">
+            <img class="pointer-events-none" src="./img/svg/SHIB.svg" alt="">
+        </div>
+        <!-- <div class="absolute top-[15%] right-[2%] animate-transright">
+            <img src="./img/svg/SOL.svg" alt="">
+        </div> -->
+        <div class="absolute top-[90%] left-[22%] animate-usdc">
+            <img class="pointer-events-none" src="./img/svg/USDC.svg" alt="">
+        </div>
+        <div class="absolute top-[7%] left-[60%] animate-usdt">
+            <img class="pointer-events-none" src="./img/svg/USDT.svg" alt="">
+        </div>
+    </div>
+
+    <div class="menu w-screen h-screen absolute z-20 overflow-hidden bg-sky-950/75 backdrop-blur-sm flex justify-center py-20 hidden">
+        <div class="container bg-slate-50 w-[90%] h-[90%] rounded-lg shadow-md relative flex flex-col justify-center">
+            <div class="container absolute size-8 top-[3%] right-[4%]">
+                <button class="cancel-btn">
+                    <img class="" src="./img/icons/icon-cancel.svg" alt="">
+                </button>
+            </div>
+            <div class="px-5">
+                <p class="font-custom font-medium w-[90%]">
+                    Этот простой калькулятор поможет распределить ваши <em>финансы</em> в&nbsp<em>активы</em>, соблюдая нужные <em>пропорции.</em><br><br>
+                </p>
+                <p class="font-custom font-normal">
+                    Вам нужно лишь ввести сумму в&nbspрублях (или любой другой фиатной валюте), которую вы&nbspинвестируете, курс при покупке USDT и&nbspуказать криптовалюту в&nbspтом процентном соотношении, в&nbspкотором вы&nbspхотите распределить её&nbspв&nbspпортфеле.<br><br>
+                </p>
+                <p class="font-custom font-normal">
+                    Если это приложение было полезно и&nbspсэкономило ваше время, вы&nbspможете оставить чаевые, отправив USDT в&nbspсети TRON/TRC20 на&nbspадрес: <br><br>[TBR6VMFtmg8F7pQX9x72zukooGJWnomuxf]<br><br> или оставить отзыв: <a href="mailto:cryptoraspred@gmail.com">cryptoraspred@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container h-screen px-4 py-8 z-10 lg:w-[820px] lg:mx-auto">
+        <div class="container flex gap-x-5 justify-between items-center">
+            <div class="container w-3/4 text-center bg-slate-50/75 backdrop-blur-sm shadow-lg rounded-lg px-5 py-4">
+                <p class="font-custom font-semibold text-2xl">CryptoRaspred</p>
+            </div>
+            <div class="container size-16 flex-none bg-slate-50/75 backdrop-blur-sm shadow-lg rounded-lg px-1 py-1">
+                <button id="info" class="menu-btn">
+                    <img class="size-14" src="./img/icons/icon-letter-i.svg" alt="info">
+                </button>
+            </div>
+        </div>
+
+        <div class="container bg-slate-50/75 backdrop-blur-sm shadow-lg rounded-lg px-5 mt-5">
+            <div class="container py-3">
+                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Сумма вложений</label>
+                <div class="relative mt-1 rounded-lg shadow-sm">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <span class="text-gray-500 sm:text-sm">₽</span>
+                </div>
+                <input type="number" name="price" id="sumInFiat" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="50.000">
+                <!-- <div class="absolute inset-y-0 right-0 flex items-center">
+                    <label for="currency" class="sr-only">Currency</label>
+                    <select id="currency" name="currency" class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                    <option>USD</option>
+                    <option>CAD</option>
+                    <option>EUR</option>
+                    </select>
+                </div> -->
+                </div>
+            </div>
+
+            <div class="container pb-5">
+                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Курс USDT при покупке</label>
+                <div class="relative mt-1 rounded-lg shadow-sm">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <span class="text-gray-500 sm:text-sm">₽</span>
+                </div>
+                <input type="number" name="price" id="dollarExchangeRate" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="92.3">
+                <!-- <div class="absolute inset-y-0 right-0 flex items-center">
+                    <label for="currency" class="sr-only">Currency</label>
+                    <select id="currency" name="currency" class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                    <option>USD</option>
+                    <option>CAD</option>
+                    <option>EUR</option>
+                    </select>
+                </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container bg-slate-50/75 backdrop-blur-sm shadow-lg rounded-lg px-5 mt-5 grid gap-4 grid-cols-1 grid-rows-5 py-5">
+            <div class="flex flex-row gap-x-5">
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm">
+                        <input type="text" name="price" id="coinName1" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Name">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm">
+                        <input type="number" name="price" id="percent1" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-x-5">
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm">
+                        <input type="text" name="price" id="coinName2" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Name">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm">
+                        <input type="number" name="price" id="percent2" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-x-5">
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm w">
+                        <input type="text" name="price" id="coinName3" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Name">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm w">
+                        <input type="number" name="price" id="percent3" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-x-5">
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm">
+                        <input type="text" name="price" id="coinName4" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Name">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm">
+                        <input type="number" name="price" id="percent4" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-x-5">
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm">
+                        <input type="text" name="price" id="coinName5" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Name">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="relative rounded-lg shadow-sm">
+                        <input type="number" name="price" id="percent5" class="block w-full rounded-md border-0 py-1.5 pl-7 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container bg-slate-50/75 backdrop-blur-sm shadow-lg rounded-lg px-5 mt-5 py-5">
+            <div class="text-center font-custom font-medium">Результат расчета покупок:</div>
+            <div class="text-center mt-2" id="output"></div>
+        </div>
+
+    </div>
+</body>
+</html>
